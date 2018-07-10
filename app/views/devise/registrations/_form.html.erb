@@ -1,0 +1,30 @@
+
+      <fieldset class="auth-box" id="signup-box">
+        <a class="active fs-title user-auth-toggle">Sign Up</a>
+        <a class="fs-title user-auth-toggle">Login</a>
+        <h3 class="fs-subtitle">Join the Pack</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+          
+
+          <div class="field">
+            <%= f.email_field :email, autocomplete: "email", placeholder: "email" %>
+          </div>
+
+          <div class="field">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> character minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+          </div>
+
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password" %>
+          </div>
+      
+
+          <div class="actions">
+            <%= f.submit "Sign up", :class => "action-button"%>
+          </div>
+        <% end %>
+     </fieldset>

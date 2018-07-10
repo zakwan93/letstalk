@@ -1,0 +1,57 @@
+    
+<div class="row bg-light" style="height: 100vh;">
+
+    <div class="container m-5 text-dark">
+
+            <h2 class="ml-2">Complete your profile here</h2><br>
+
+            <%= form_for @profile, url:  profile_path do |f| %>
+
+                <div class="form-group">
+                    <%= f.label :fname, class: "col-sm-2 control-label" %>
+                    <div class="col-sm-6">
+                        <%= f.text_field :fname, autofocus: true, autocomplete: "email", class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :lname, class: "col-sm-2 control-label" %>
+                    <div class="col-sm-6">
+                        <%= f.text_field :lname, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        NYCDA Student? ( YES | NO )
+                    </label>
+                    <div class="col-sm-6">
+                        <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+               
+
+                <div class="form-group">
+
+                    <%= f.label :location, class: "col-sm control-label" %>
+                    <div class="col-sm-6">
+                        <%= f.text_field :location, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+
+                 <div class="field">
+                    <%= f.label :image %>
+                    <%= f.file_field :image %>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <%= f.submit "UPDATE", class: "btn btn-primary" %>
+                    </div>
+                </div>
+
+                 <%= link_to 'Home', profile_path%>
+            <% end %>
+    </div>
+</div>
+

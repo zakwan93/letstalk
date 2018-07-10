@@ -1,0 +1,45 @@
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">LANGUAGE</th>
+      <th scope="col">DISCRIPTION</th>
+      <th scope="col">RATING</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @skills.each do |skill| %>    
+    <tr>
+      <td><%= skill.language %> </td>
+      <td><%= skill.disc %></td>
+      <td><%= skill.rating %> / 5</td>
+      <td>  <%= link_to 'Edit', edit_skills_path, :style=> 'color:black', :class => 'navbar-link' %> </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<center>
+    <%= link_to 'ADD MORE SKILL', new_skills_path, :style=> 'color:black', :class => 'navbar-link' %>
+</center>
+
+<% @result_users.each do |user| %>
+
+  <%= user.profile.fname %>
+
+<% end %>
+
+
+
+        <%= form_tag(skills_path,  method: :get) do %>
+                <div class="form-group">
+                    <lable class = "col-sm-2 control-label" >
+                      Skills
+                    </lable>
+                    <div class="col-sm-6">
+                        <%= text_field_tag :language, nil, class: "form-control" %>
+                    </div>
+                </div>
+                 <%= submit_tag 'Search', name: nil %>
+        <% end %>

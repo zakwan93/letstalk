@@ -1,0 +1,24 @@
+ <% unless @profile == nil %>
+      <p class="m-5">
+            <% if @profile.image.attached? %>
+              
+                <br>
+                <%= image_tag @user.profile.image, :style=> 'height: 250px; width: 250px;' %>
+              
+      </p>      <% end %>
+
+
+            <h5 class="m-5 text-uppercase">  NAME: <%= @user.profile.fname %> <%= @user.profile.lname %> 
+              <hr>
+              Curruntly NYCDA student: <strong> <%= @user.profile.nycdastudent %> </strong>
+             <hr>
+             Curruntly city location: <strong> <%= @user.profile.location %> </strong>
+            </h5>
+            <hr>
+            <%= link_to 'Edit', edit_profile_path, :style=> 'color:black', :class => 'navbar-link' %>
+
+            <% else %>
+
+            <%= link_to 'Dashboard', new_profile_path, :style=> 'color:yellow', :class => 'navbar-link' %>
+<% end %>
+

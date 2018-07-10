@@ -1,0 +1,28 @@
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">LANGUAGE</th>
+      <th scope="col">DISCRIPTION</th>
+      <th scope="col">RATING</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @skills.each do |skill| %>    
+    <tr>
+      <td><%= skill.language %> </td>
+      <td><%= skill.disc %></td>
+      <td><%= skill.rating %> / 5</td>
+      <td>  <%= link_to 'Edit', edit_skills_path(skill), :style=> 'color:black', :class => 'navbar-link' %> |
+            <%= link_to 'Remove', skills_path(skill), method: :delete, data: { confirm: "Are you sure?" }, :style=> 'color:black', :class => 'navbar-link' %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<center>
+    <%= link_to 'ADD MORE SKILL', new_skills_path, :style=> 'color:black', :class => 'navbar-link' %>
+</center>
+
