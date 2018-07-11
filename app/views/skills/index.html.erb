@@ -1,45 +1,38 @@
 
 
-<table class="table table-striped">
+<table class="table table-striped text-uppercase">
   <thead>
     <tr>
+      <th scope="col">NAME</th>
       <th scope="col">LANGUAGE</th>
       <th scope="col">DISCRIPTION</th>
       <th scope="col">RATING</th>
+      <!-- <th scope="col">DEBUG</th> -->
     </tr>
   </thead>
   <tbody>
-  <% @skills.each do |skill| %>    
+  <% @result_users.each do |user| %>
+    <% @matching_results = skills_for_result(user.skills, @result_skills) %> 
+     
     <tr>
-      <td><%= skill.language %> </td>
-      <td><%= skill.disc %></td>
-      <td><%= skill.rating %> / 5</td>
-      <td>  <%= link_to 'Edit', edit_skill_path(skill), :style=> 'color:black', :class => 'navbar-link' %> </td>
+      <td> <%= user.profile.try(:fname) %> <%= user.profile.try(:lname) %></td>
+      <td> 
+        <%= @matching_results.first && @matching_results.first.language %>
+      </td>
+      <td> 
+        <%= @matching_results.first && @matching_results.first.disc %>
+      </td>
+      <td> 
+        <%= @matching_results.first && @matching_results.first.rating %>
+      </td>
+      <td>
+        <%= link_to 'Message', new_user_chat_room_path(user), :style=> 'color:black', :class => 'navbar-link' %>
+      </td>
+      <!-- <td>
+        <%= @matching_results %>
+      </td> -->
     </tr>
+    <% end %>
   </tbody>
-  <% end %>
+  
 </table>
-
-<center>
-    <%= link_to 'ADD MORE SKILL', new_skill_path, :style=> 'color:black', :class => 'navbar-link' %>
-</center>
-
-<% @result_users.each do |user| %>
-
-  <%= user.profile.fname %>
-
-<% end %>
-
-
-
-        <%= form_tag(skills_path,  method: :get) do %>
-                <div class="form-group">
-                    <lable class = "col-sm-2 control-label" >
-                      Skills
-                    </lable>
-                    <div class="col-sm-6">
-                        <%= text_field_tag :language, nil, class: "form-control" %>
-                    </div>
-                </div>
-                 <%= submit_tag 'Search', name: nil %>
-        <% end %>

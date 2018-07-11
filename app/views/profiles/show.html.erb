@@ -14,8 +14,8 @@
       <td><%= skill.language %> </td>
       <td><%= skill.disc %></td>
       <td><%= skill.rating %> / 5</td>
-      <td>  <%= link_to 'Edit', edit_skills_path(skill), :style=> 'color:black', :class => 'navbar-link' %> |
-            <%= link_to 'Remove', skills_path(skill), method: :delete, data: { confirm: "Are you sure?" }, :style=> 'color:black', :class => 'navbar-link' %>
+      <td>  <%= link_to 'Edit', edit_profile_skill_path(skill), :style=> 'color:black', :class => 'navbar-link' %> |
+            <%= link_to 'Remove', skill_path(skill), method: :delete, data: { confirm: "Are you sure?" }, :style=> 'color:black', :class => 'navbar-link' %>
       </td>
     </tr>
   </tbody>
@@ -23,6 +23,6 @@
 </table>
 
 <center>
-    <%= link_to 'ADD MORE SKILL', new_skills_path, :style=> 'color:black', :class => 'navbar-link' %>
+    <%= link_to 'ADD MORE SKILL', new_skill_path, :style=> 'color:black', :class => 'navbar-link' %>
 </center>
 

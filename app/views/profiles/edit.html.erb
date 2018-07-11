@@ -40,10 +40,12 @@
                 </div>
 
                  <div class="field">
-                    <%= f.label :image %>
-                    <%= f.file_field :image %>
+                    <%= f.label :image, class: "col-sm control-label" %>
+                    <div class="col-sm-6">
+                        <%= f.file_field :image %>
+                    </div>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-6">
                         <%= f.submit "UPDATE", class: "btn btn-primary" %>

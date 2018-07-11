@@ -4,6 +4,12 @@ class ChatRoomsController < ApplicationController
     @user = current_user
     @profile = current_user.profile
     @chat_rooms = @user.chat_rooms
+    if params[:language]
+        @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
+        @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating ASC').uniq
+     else
+        @skills = Skill.all
+      end
   end
 
   def show
@@ -20,6 +26,8 @@ class ChatRoomsController < ApplicationController
   end
 
   def create
+    @user = current_user
+    @profile = current_user.profile
     @chat_room = current_user.chat_rooms.build(chat_room_params)
     if @chat_room.save
       flash[:success] = 'Chat room added!'

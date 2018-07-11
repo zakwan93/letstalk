@@ -25,12 +25,13 @@ class ProfilesController < ApplicationController
 		# current_user.skills << Skill.create(skill_params)
 
 		Profile.create(profile_params.merge(user_id: current_user.id))
-		redirect_to new_skills_path
+		redirect_to new_skill_path
 	end
 
 	def edit
 		@user = current_user
 		@profile = current_user.profile
+		@skills = current_user.skills
 	end
 
 	def update
@@ -45,10 +46,6 @@ class ProfilesController < ApplicationController
 		redirect_to profile_path
 	end
 
-	def dashboard
-
-		render 'profile/dashboard'
-	end
 
 	private
 		def profile_params

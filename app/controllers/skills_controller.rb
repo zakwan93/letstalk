@@ -6,22 +6,15 @@ class SkillsController < ApplicationController
 		@skills = current_user.skills
 		if params[:language]
 		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
-		    @result_users = User.joins(:skills).where(skills: @result_skills).order('skills.rating ASC')
+		    @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating ASC').uniq
 		 else
-		    @skill = Skill.all
+		    @skills = Skill.all
   		end
 	end
 
 	def show
 		@user = current_user
 		@skills = current_user.skills
-
-		if params[:language]
-		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
-		    @result_users = User.joins(:skills).where(skills: @result_skills).order('skills.rating ASC')
-		 else
-		    @skill = Skill.all
-  		end
   	
 	end
 
@@ -36,25 +29,28 @@ class SkillsController < ApplicationController
 		# Profile.create(profile_params.merge(user_id: current_user.id))
 
 		current_user.skills << Skill.create(skills_params)
-		redirect_to skills_path
+		redirect_to profile_path
 	end
 
 	def edit
 		@user = current_user
 		@profile = current_user.profile
-		@skills = current_user.skills
+		@skills = Skill.find(params[:id])
 	end
 
 	def update
 		@profile = current_user.profile
-		Profile.update(profile_params)
+		@skills = Skill.find(params[:id])
+		@skills.update(skills_params)
 		redirect_to profile_path
 	end
 
 	def destroy
+		@user = current_user
+		@profile = current_user.profile
 		@skills = Skill.find(params[:id])
-		@skills.destroy
-		redirect_to skills_path
+		@skills.delete
+		redirect_to profile_path
 	end
 
 	private

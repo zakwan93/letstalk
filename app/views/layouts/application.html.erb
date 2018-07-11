@@ -35,11 +35,20 @@
             </ul>
             <span class="navbar-text">
               <ul class="navbar-nav mr-auto">
-               <li class="text-white nav-item m-2">Welcome, 
+               <!-- <li class="text-white nav-item m-2">Welcome, 
                   <strong style="color: #1e87f0;">
                     <%= current_user.email %>
                   </strong>
-                </li>
+                </li> -->
+                <li class="text-white nav-item mt-2">
+                    <%= form_tag(skills_path,  method: :get) do %>
+                                    <div class="form-group">
+                                            <%= text_field_tag :language, nil %>
+                                               <%= submit_tag 'Search', name: nil %>
+                                      
+                                    </div>
+                    <% end %>
+                  </li>
                 <li class="nav-item m-2"><%= link_to "Logout", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %></li>
               </ul>
             </span>
