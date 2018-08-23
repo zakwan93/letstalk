@@ -14,20 +14,22 @@
   <body>
     
     <% if user_signed_in? %>
+
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         
-          <a class="text-white navbar-brand m-2"  style="font-family: Trebuchet MS " href="#">LET'S CODE(< >)</a>
+          <a class="text-white navbar-brand m-2"  style="font-family: Trebuchet MS " href="<%= profile_path %>">LET'S CODE(< >)</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item m-2">
-                <%= link_to 'Profile', profile_path, :style=> 'color:yellow', :class => 'navbar-link' %>
+                <%= link_to 'PROFILE', profile_path, :style=> 'color:yellow', :class => 'navbar-link' %>
               </li>
               <li class="nav-item m-2">
-                <%= link_to 'Chat Rooms', chat_rooms_path, :style=> 'color:yellow', :class => 'navbar-link' %>
+                <%= link_to 'CHAT-ROOMS', chat_rooms_path, :style=> 'color:yellow', :class => 'navbar-link' %>
               </li>
+              <li class="nav-item m-2"><%= link_to "LOGOUT", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %></li>
               <!-- <li class="nav-item m-2">
                 <%= link_to 'Edit Profile', edit_user_registration_path, :style=> 'color:yellow', :class => 'navbar-link' %>
               </li> -->
@@ -44,12 +46,12 @@
                     <%= form_tag(skills_path,  method: :get) do %>
                                     <div class="form-group">
                                             <%= text_field_tag :language, nil %>
-                                               <%= submit_tag 'Search', name: nil %>
+                                            <%= submit_tag 'Search', name: nil %>
                                       
                                     </div>
                     <% end %>
                   </li>
-                <li class="nav-item m-2"><%= link_to "Logout", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %></li>
+                
               </ul>
             </span>
           </div>
