@@ -1,6 +1,14 @@
 
 <div class="container mt-4">
+	<ul>
 
-	<li><%= link_to "Enter #{chat_room.title}", chat_room_path(chat_room) %></li>
+		<li><%= link_to "Enter #{chat_room.title}", chat_room_path(chat_room) %>
+			<%=  @user.profile.fname %>
+		</li>
+		<!-- <li>< link_to 'Delete', chat_room_path(@chat_rooms), :style=> 'color:black', :class => 'navbar-link' %> </li> -->
+			<!-- <  @chat_rooms.each do |room| %>
+			<li>  < link_to 'Delete', chat_room_path(room), :style=> 'color:black', :class => 'navbar-link' %> </li>
+		< end %> -->
+	</ul>
 
 </div>

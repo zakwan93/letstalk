@@ -1,3 +1,21 @@
+chatroom
+	id
+	owner_id
+	name
+
+chatroom_users
+subscriptions
+	id
+	user_id
+	chatroom_id
+
+messages
+	note
+	chatroom_id
+	user_id
+
+chat_rooms_channel.rb
+
 class ChatRoomsChannel < ApplicationCable::Channel
   def subscribed
     stream_from "chat_rooms_#{params['chat_room_id']}_channel"

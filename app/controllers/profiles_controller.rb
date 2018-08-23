@@ -46,6 +46,16 @@ class ProfilesController < ApplicationController
 		redirect_to profile_path
 	end
 
+	def dashboard
+		@user = current_user
+		@skills = current_user.skills
+		if params[:language]
+		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
+		    @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating DESC').uniq
+		 else
+		    @skills = Skill.all
+  		end
+	end	
 
 	private
 		def profile_params

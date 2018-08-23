@@ -3,10 +3,11 @@ class SkillsController < ApplicationController
 
 	def index
 		@user = current_user
+		@profile = current_user.profile
 		@skills = current_user.skills
 		if params[:language]
 		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
-		    @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating ASC').uniq
+		    @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating DESC').uniq
 		 else
 		    @skills = Skill.all
   		end
@@ -53,6 +54,11 @@ class SkillsController < ApplicationController
 		redirect_to profile_path
 	end
 
+	def dashboard
+		@skills = current_user.skills
+		@users = UserSkill.find(params[:id])
+	end
+	
 	private
 		def skills_params
 			params.require(:skill).permit(:language, :disc, :rating)

@@ -1,0 +1,11 @@
+
+  <% @users.each do |user| %>
+     
+    
+      <td> <%= user.profile.try(:fname) %> <%= user.profile.try(:lname) %></td>
+    
+        <%= link_to 'Message', new_user_chat_room_path(user), :style=> 'color:black', :class => 'navbar-link' %>
+  
+     
+      <% end %>
+

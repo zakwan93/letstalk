@@ -9,7 +9,7 @@
 
                 <div class="form-group">
                     
-                    <lable class = "col-sm-2 control-label" >
+                    <lable class = "col-sm-6 control-label" >
                         First Name
                     </lable>
                     <div class="col-sm-6">
@@ -18,14 +18,16 @@
                 </div>
 
                 <div class="form-group">
-                    <%= f.label :lname, class: "col-sm-2 control-label" %>
+                    <lable class = "col-sm-6 control-label" >
+                        Last Name
+                    </lable>
                     <div class="col-sm-6">
                         <%= f.text_field :lname, autocomplete: "off", class: "form-control" %>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>
+                    <label class = "col-sm-4 control-label">
                         NYCDA Student? ( YES | NO )
                     </label>
                     <div class="col-sm-6">
@@ -35,21 +37,28 @@
                
 
                 <div class="form-group">
-
-                    <%= f.label :location, class: "col-sm control-label" %>
+                    <label class = "col-sm-4 control-label">
+                        Currunt City
+                    </label>
                     <div class="col-sm-6">
                         <%= f.text_field :location, autocomplete: "off", class: "form-control" %>
                     </div>
                 </div>
 
-                <div class="field">
-                    <%= f.label :image %>
-                    <%= f.file_field :image %>
+                <div class="form-group">
+                     <label class = "col-sm-4 control-label">
+                        Upload Image
+                    </label>
+                    <div class="col-sm-6">
+                        <%= f.file_field :image, class: "form-control" %>
+                    </div>
                 </div>
 
+                
+                <br>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-6">
-                        <%= f.submit "UPDATE", class: "btn btn-primary" %>
+                        <%= f.submit "CREATE", class: "btn btn-primary" %>
                     </div>
                 </div>
             <% end %>

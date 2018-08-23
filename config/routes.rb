@@ -7,18 +7,21 @@ Rails.application.routes.draw do
   	
   	root to: "chat_rooms#index"
 
-	resources :chat_rooms, only: [:new, :create, :show, :index]
+	resources :chat_rooms, only: [:new, :create, :show, :index, :destroy]
 
 	mount ActionCable.server => '/cable'
 
-	get "dashboard", to: "profile#dashboard"
+	# get "dashboard", to: "skills#dashboard"
+	get "dashboard", to: "skills#dashboard"
 
 	resources :users, only: [] do
 		resources :chat_rooms, only: [:new, :create]
+		resources :profile, only: [:index]
 	end
 
 	resource :profile do
 		resources :skills, only: [:edit, :update, :destroy]
+		# get "dashboard", to: "profile#dashboard"
 	end
 	resources :skills
 

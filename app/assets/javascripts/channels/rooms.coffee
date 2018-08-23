@@ -1,4 +1,4 @@
-jQuery(document).on 'turbolinks:load', ->
+ jQuery(document).on 'turbolinks:load', ->
   messages = $('#messages')
   if $('#messages').length > 0
     messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
@@ -16,6 +16,7 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
+        console.log(data['message'])
         messages.append data['message']
         messages_to_bottom()
 

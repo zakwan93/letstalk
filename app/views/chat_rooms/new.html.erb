@@ -1,7 +1,7 @@
 <div class="container mt-4">
 	<h1>Add chat room</h1>
 
-	<%= form_for @chat_room do |f| %>
+	<%= form_for [@user, @chat_room] do |f| %>
 	  <div class="form-group">
 	    <%= f.label :title %>
 	    <%= f.text_field :title, autofocus: true, class: 'form-control' %>
