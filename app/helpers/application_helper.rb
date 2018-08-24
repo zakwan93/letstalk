@@ -1,8 +1,7 @@
 module ApplicationHelper
 
 	 def gravatar_for(user, opts = {})
-	    opts[:alt] = user.name
-	    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}?s=#{opts.delete(:size) { 40 }}",
-	              opts
+	    opts[:alt] = user.profile.fname
+	    image_tag user.profile.image, style: 'width: 25px; height: 25px;'
   	end
 end

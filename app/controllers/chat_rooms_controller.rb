@@ -2,9 +2,10 @@ class ChatRoomsController < ApplicationController
 
   def index
     @user = current_user
+    # @me = User.find(params[:user_id])
     @profile = current_user.profile
     @chat_rooms = @user.owned_chatrooms + @user.chat_rooms
-    @chat_room = current_user.owned_chatrooms
+    # @chat_room = @me.user_chat_rooms
     
     if params[:language]
         @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
