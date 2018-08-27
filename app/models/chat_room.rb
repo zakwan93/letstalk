@@ -5,4 +5,12 @@ class ChatRoom < ApplicationRecord
   has_many :user_chat_room
   has_many :users, :through => :user_chat_room, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  #   delegate :profile, to: :owner
+  # delegate :fname, to: :profile, prefix: 'owner'
+
+
+  def owner_fname
+  	owner.profile.fname
+  end
 end

@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Letstalk</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,14 +16,14 @@
   <body>
     
     <% if user_signed_in? %>
-
+      <!-- <nav class="navbar navbar-expand navbar-dark bg-dark"> -->
       <nav class="navbar navbar-dark bg-dark">
-        
           <a class="text-white navbar-brand m-2"  style="font-family: Trebuchet MS " href="<%= profile_path %>">LET'S CODE(< >)</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item m-2">
                 <%= link_to 'PROFILE', profile_path, :style=> 'color:yellow', :class => 'navbar-link' %>
@@ -29,12 +31,21 @@
               <li class="nav-item m-2">
                 <%= link_to 'CHAT-ROOMS', chat_rooms_path, :style=> 'color:yellow', :class => 'navbar-link' %>
               </li>
-              <li class="nav-item m-2"><%= link_to "LOGOUT", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %></li>
-              <!-- <li class="nav-item m-2">
-                <%= link_to 'Edit Profile', edit_user_registration_path, :style=> 'color:yellow', :class => 'navbar-link' %>
+             <!--  <li class="nav-item m-2">
+                < link_to "LOGOUT", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %>
+        
               </li> -->
-               
+              <li class="nav-item dropdown">
+                  <!-- <link_to 'PROFILE', profile_path, :style=> 'color:yellow', :class => 'navbar-link dropdown-toggle active' :id => 'navbarDropdown', role: => "button" %> -->
+                  <a href="<%= profile_path%>" class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ='color:yellow'>MORE-OPTIONS</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%= link_to 'EDIT PROFILE', edit_profile_path, :class => 'dropdown-item' %>
+                    <%= link_to "LOGOUT", destroy_user_session_path,method: :delete, :class => 'dropdown-item'  %>
+                    <!-- <a href="#" class="dropdown-item">Aplicações para a área de saúde</a> -->
+                  </div>
+               </li>
             </ul>
+
             <span class="navbar-text">
               <ul class="navbar-nav mr-auto">
                <!-- <li class="text-white nav-item m-2">Welcome, 
@@ -44,63 +55,53 @@
                 </li> -->
                 <li class="text-white nav-item mt-2">
                     <%= form_tag(skills_path,  method: :get) do %>
-                                    <div class="form-group">
-                                            <%= text_field_tag :language, nil %>
-                                            <%= submit_tag 'Search', name: nil %>
-                                      
-                                    </div>
+                        <div class="form-group">
+                            <%= text_field_tag :language, nil %>
+                            <%= submit_tag 'Search', name: nil, :class => "btn btn-outline-warning", :style=> 'color:yellow' %>
+                        </div>
                     <% end %>
-                  </li>
-                
+                </li>
               </ul>
-            </span>
+            </span>  
           </div>
-        <% end %>
       </nav>
+    <% end %>
 
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 col-xl-4" style="background-color: #FFCB04; min-height: 100vh;">
-          <h2 style="padding: 50px 0px 0px 50px;"> LET'S CODE(< >) </h2>
-        
-<% unless @user.profile == nil %>
-      <p class="mt-2 ml-5">
-            <% if @user.profile.image.attached? %>
-              
-                <br>
-                <%= image_tag @user.profile.image, :style=> 'height: 250px; width: 250px;' %>
-              
-      </p>      <% end %>
+    <div class="row">
+      <div class="col-md-5 col-lg-4 col-xl-4 d-none d-md-block" style="background-color: #FFCB04; min-height: 100vh;">
+        <h2 style="padding: 50px 0px 0px 50px;"> LET'S CODE(< >) </h2>
+          <% unless @user.profile == nil %>
+              <p class="mt-2 ml-5">
+                <% if @user.profile.image.attached? %>
+                    <br>
+                    <%= image_tag @user.profile.image, :style=> 'height: 250px; width: 250px;' %>
+                <% end %>
+              </p> 
 
-
-            <h5 class="m-5 text-uppercase">  NAME: <%= @user.profile.fname %> <%= @user.profile.lname %> 
-              <hr>
-              Curruntly NYCDA student: <strong> <%= @user.profile.nycdastudent %> </strong>
-             <hr>
-             Currunt city location: <strong> <%= @user.profile.location %> </strong>
-           
-            <hr>
-            <%= link_to 'Edit', edit_profile_path, :style=> 'color:black', :class => 'navbar-link' %>
-
-            <% else %>
-            <% if user_signed_in? %>
-            <h5 class="m-5 text-uppercase text-dark">
-                <%= link_to 'Dashboard', new_profile_path, :style=> 'color:black', :class => 'navbar-link' %>
-            <% end %>
-            </h5>
-<% end %>
-
-
-
-
-
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-7 col-lg-8 col-xl-8 bg-light">
-          <!-- <div class="container"> -->
-            <%= yield %>
-          <!-- </div> -->
-        </div>
+              <h5 class="m-5 text-uppercase">  NAME: <%= @user.profile.fname %> <%= @user.profile.lname %> 
+                <hr>
+                Curruntly NYCDA student: <strong> <%= @user.profile.nycdastudent %> </strong>
+                <hr>
+                Currunt city location: <strong> <%= @user.profile.location %> </strong>
+                <hr>
+                <%= link_to 'Edit', edit_profile_path, :style=> 'color:black', :class => 'navbar-link' %>
+                <% else %>
+                <% if user_signed_in? %>
+                <h5 class="m-5 text-uppercase text-dark">
+                  <%= link_to 'Dashboard', new_profile_path, :style=> 'color:black', :class => 'navbar-link' %>
+                <% end %>
+              </h5>
+          <% end %>
       </div>
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 bg-light ">
+          <!-- <div class="container"> -->
+        <%= yield %>
+          <!-- </div> -->
+      </div>
+    </div>
+      
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  </body>
+  
+</body>
 </html>

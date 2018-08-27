@@ -6,6 +6,7 @@ class ChatRoomsController < ApplicationController
     @profile = current_user.profile
     @chat_rooms = @user.owned_chatrooms + @user.chat_rooms
     # @chat_room = @me.user_chat_rooms
+    # @user_name = @user.profile.fname 
     
     if params[:language]
         @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
