@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 	get "dashboard", to: "skills#dashboard"
 
 	resources :users, only: [] do
-		resources :chat_rooms, only: [:new, :create]
+		resources :chat_rooms, only: [:new, :create, :destroy]
 		resources :profile, only: [:index]
 	end
 

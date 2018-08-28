@@ -4,12 +4,12 @@
 <div class="card">
   <div class="card-block">
     <div class="row">
-      <div class="col-md-2 col-sm-4 xs-4">
+      <div class=" col-lg-1 col-md-2 col-sm-3">
         <%= gravatar_for message.user %>
       </div>
-      <div class="col-md-10 col-sm-8 xs-8">
+      <div class="col-lg-11 col-md-10 col-sm-9">
         <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
+          <span class="text-muted"><%= message.user.profile.fname %> at <%= message.timestamp %> says</span><br>
           <%= message.body %>
         </p>
       </div>
