@@ -8,9 +8,11 @@ class ChatRoomsChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
-  	# puts ":::::::: #{data['chat_room_id']}::::::"
-  	@chatroom = ChatRoom.find(data['chat_room_id'])
-  	@chatroom.owner.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
+    # puts ":::::::: #{data['chat_room_id']}::::::"
+    # puts ":::::::: #{data['user_id']}::::::"
+    @chatroom = ChatRoom.find(data['chat_room_id'])
+    @chatroom.messages.create(body: data['message'], user_id: data['user_id'])
+    # @chatroom.owner.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
   end
   
 end

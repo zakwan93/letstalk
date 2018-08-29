@@ -8,6 +8,7 @@
     App.global_chat = App.cable.subscriptions.create {
       channel: "ChatRoomsChannel"
       chat_room_id: messages.data('chat-room-id')
+      user_id: messages.data('user-id')
       },
       connected: ->
         # Called when the subscription is ready for use on the server
@@ -20,14 +21,14 @@
         messages.append data['message']
         messages_to_bottom()
 
-      send_message: (message, chat_room_id) ->
-        @perform 'send_message', message: message, chat_room_id: chat_room_id  # '@perform' in coffeescript refers to this. => this.perform
+      send_message: (message, chat_room_id, user_id) ->
+        @perform 'send_message', message: message, chat_room_id: chat_room_id, user_id: user_id  # '@perform' in coffeescript refers to this. => this.perform
 
   $('#new_message').submit (e) ->
     $this = $(this) # '$this' vs '$(this)' is to distinguish jQuery objects stored in variables from other variables.
     textarea = $this.find('#message_body')
     if $.trim(textarea.val()).length > 1
-      App.global_chat.send_message textarea.val(), messages.data('chat-room-id')
+      App.global_chat.send_message textarea.val(), messages.data('chat-room-id'), messages.data('user-id')
       textarea.val('')
     e.preventDefault()
     return false

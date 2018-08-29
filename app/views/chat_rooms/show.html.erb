@@ -9,23 +9,29 @@
 }
   
 </style>
-<div class="container mt-4">
-  <%= form_for @message, url: '#' do |f| %>
-    <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
-      <small class="text-muted">From 2 to 1000 characters</small>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-lg-8">
+        <div class="container mt-4">
+          <%= form_for @message, url: '#' do |f| %>
+            <div class="form-group">
+              <%= f.label :body %>
+              <%= f.text_area :body, class: 'form-control' %>
+              <small class="text-muted">From 2 to 1000 characters</small>
+            </div>
+
+            <%= f.submit "Send", class: 'btn btn-primary btn-lg' %>
+          <% end %>
+        </div>
     </div>
 
-    <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
-  <% end %>
-</div>
-
-<div class="container mt-4">
-  <h1><%= @chat_room.title %></h1>
-
-  <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
-    <%= render @chat_room.messages %>
+    <div class="col-sm-8">
+      <div class="container mt-4 col-lg-12">
+        <h1><%= @chat_room.title %></h1>
+        <div id="messages" data-chat-room-id="<%= @chat_room.id %>" data-user-id="<%= @user.id %>">
+          <%= render @chat_room.messages %>
+        </div>
+      </div>
+    </div>
   </div>
-
 </div>
