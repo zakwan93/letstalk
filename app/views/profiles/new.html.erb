@@ -1,7 +1,7 @@
     
 <div class="row bg-light" style="height: 100vh;">
 
-    <div class="container m-5 text-dark">
+    <div class="container m-5 text-dark text-uppercase">
 
             <h2 class="ml-2">Complete your profile here</h2><br>
 
@@ -10,7 +10,7 @@
                 <div class="form-group">
                     
                     <lable class = "col-sm-6 control-label" >
-                        First Name
+                        First Name <span class="text-danger"> * </span>
                     </lable>
                     <div class="col-sm-6">
                         <%= f.text_field :fname, autofocus: true, autocomplete: "email", class: "form-control" %>
@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <lable class = "col-sm-6 control-label" >
-                        Last Name
+                        Last Name <span class="text-danger"> * </span>
                     </lable>
                     <div class="col-sm-6">
                         <%= f.text_field :lname, autocomplete: "off", class: "form-control" %>
@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label class = "col-sm-4 control-label">
-                        NYCDA Student? ( YES | NO )
+                        NYCDA Student? ( YES | NO ) <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
                         <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control" %>
@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label class = "col-sm-4 control-label">
-                        Currunt City
+                        Current City <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
                         <%= f.text_field :location, autocomplete: "off", class: "form-control" %>
@@ -47,7 +47,7 @@
 
                 <div class="form-group">
                      <label class = "col-sm-4 control-label">
-                        Upload Image
+                        Upload Image <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
                         <%= f.file_field :image, class: "form-control" %>

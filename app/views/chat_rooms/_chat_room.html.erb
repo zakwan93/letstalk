@@ -1,17 +1,19 @@
 
-<div class="container mt-4">
+<div class="container mt-4" >
 	
 	<blockquote class="blockquote  list-group-item list-group-item-action list-group-item-light ">
 	  <p class="mb-0">
 	  	<%= link_to "#{chat_room.title}", chat_room_path(chat_room), :class => 'navbar-link text-dark' %>
+	  	<span class = "float-right" style="font-size: 1rem;">
+			<%= link_to 'Delete', chat_room_path(@chat_rooms),:class => 'navbar-link text-danger', method: :delete, data: { confirm: "Are you sure?" }%>
+	  	</span>
 	  </p>
+
 	  <footer class="blockquote-footer">Created By
-	  	<cite title="Source Title" class="text-info">
+	  	<cite title="Source Title"  style="color:#FFCB04">
 	  		<%=  chat_room.owner_fname %>
 	  	</cite>
 	  </footer>
-	  <span style="font-size: 1rem;">
-		<%= link_to 'Delete', chat_room_path(@chat_rooms),:class => 'navbar-link text-danger', method: :delete, data: { confirm: "Are you sure?" }%>
-	  </span>
+	  
 	</blockquote>
 </div>

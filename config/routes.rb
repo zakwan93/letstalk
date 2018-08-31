@@ -5,6 +5,13 @@ Rails.application.routes.draw do
 	}
   	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	
+  	   resources :messages
+  	   # root to: 'notifications#index'
+	  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	 
+	  # Websockets resemble this URL
+	  
+	  get "notifications/index", to: "notifications#index"
   	root to: "chat_rooms#index"
 
 	resources :chat_rooms, only: [:new, :create, :show, :index, :destroy]
