@@ -62,6 +62,10 @@
                         </div>
                     <% end %>
                 </li>
+                 <li>
+                    <%= image_tag "notification_bell", :style=> 'height: 40px; width:60px;', :class=> "mt-2"%>
+                    <span  id="notification-counter"><%= @counter %></span>
+                </li>
               </ul>
             </span>  
           </div>
@@ -81,7 +85,7 @@
                 <% end %>
               </p> 
 
-              <h5 class="m-5 text-uppercase ">  NAME: <%= @user.profile.fname %> <%= @user.profile.lname %> 
+              <h5 class="m-5 text-uppercase ">  NAME: <strong><%= @user.profile.fname %> <%= @user.profile.lname %> </strong>
                 <hr>
                 NYCDA student: <strong> <%= @user.profile.nycdastudent %> </strong>
                 <hr>

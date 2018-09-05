@@ -7,7 +7,9 @@ class SkillsController < ApplicationController
 		@skills = current_user.skills
 		if params[:language]
 		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
-		    @result_users = User.joins(:user_skills, :skills).where(user_skills: {skill_id:  @result_skills}).order('skills.rating DESC').uniq
+		    @result_users = User.joins(:user_skills, :skills)
+		    				.where(user_skills: {skill_id:  @result_skills})
+		    				.order('skills.rating DESC').uniq
 		 else
 		    @skills = Skill.all
   		end

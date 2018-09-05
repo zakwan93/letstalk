@@ -12,7 +12,7 @@
                         <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :language, autofocus: true, autocomplete: "email", class: "form-control" %>
+                        <%= f.text_field :language, autofocus: true, class: "form-control", required: true %>
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                         <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :disc, autocomplete: "off", class: "form-control" %>
+                        <%= f.text_field :disc, autocomplete: "off", class: "form-control", required: true %>
                     </div>
                 </div>               
 
@@ -30,7 +30,7 @@
                         <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.select :rating, options_for_select([1,2,3,4,5]), prompt: 'Select One' %>
+                        <%= f.select :rating, options_for_select([1,2,3,4,5]), prompt: 'Select One', required: true%>
                     </div>
                 </div>
 
