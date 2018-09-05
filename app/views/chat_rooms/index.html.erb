@@ -5,8 +5,11 @@
  -->
 
 	<ul>
+		<% @chat_rooms.each do |chat_room| %>
+			<%= render chat_room %>
+		<% end %>
 
-		  <%= render @chat_rooms %>
+		  
 		  
 	</ul>
 	

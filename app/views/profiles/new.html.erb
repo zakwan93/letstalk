@@ -13,7 +13,7 @@
                         First Name <span class="text-danger"> * </span>
                     </lable>
                     <div class="col-sm-6">
-                        <%= f.text_field :fname, autofocus: true, autocomplete: "email", class: "form-control" %>
+                        <%= f.text_field :fname, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                         Last Name <span class="text-danger"> * </span>
                     </lable>
                     <div class="col-sm-6">
-                        <%= f.text_field :lname, autocomplete: "off", class: "form-control" %>
+                        <%= f.text_field :lname, autocomplete: "off", class: "form-control", required: true %>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
                         NYCDA Student? ( YES | NO ) <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control" %>
+                        <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control", required: true %>
                     </div>
                 </div>
                
@@ -41,7 +41,7 @@
                         Current City <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :location, autocomplete: "off", class: "form-control" %>
+                        <%= f.text_field :location, autocomplete: "off", class: "form-control", required: true %>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
                         Upload Image <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.file_field :image, class: "form-control" %>
+                        <%= f.file_field :image, class: "form-control", required: true %>
                     </div>
                 </div>
 

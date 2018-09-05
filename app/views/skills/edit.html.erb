@@ -3,21 +3,21 @@
 
     <div class="container m-5 text-dark">
 
-            <h2 class="ml-2">Add your skills here</h2><br>
+            <h2 class="ml-2">EDIT YOUR SKILL HERE</h2><br>
 
             <%= form_for @skills do |f| %>
 
                 <div class="form-group">
                     <%= f.label :language, class: "col-sm-2 control-label" %>
                     <div class="col-sm-6">
-                        <%= f.text_field :language, autofocus: true, autocomplete: "email", class: "form-control" %>
+                        <%= f.text_field :language, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <%= f.label :Discription, class: "col-sm-2 control-label" %>
+                    <%= f.label :DEscription, class: "col-sm-2 control-label" %>
                     <div class="col-sm-6">
-                        <%= f.text_field :disc, autocomplete: "off", class: "form-control" %>
+                        <%= f.text_field :disc, autocomplete: "off", class: "form-control", required: true %>
                     </div>
                 </div>               
 
@@ -25,7 +25,7 @@
 
                     <%= f.label :Rating, class: "col-sm control-label" %>
                     <div class="col-sm-6">
-                        <%= f.select :rating, options_for_select([1,2,3,4,5]), prompt: 'Select One' %>
+                        <%= f.select :rating, options_for_select([1,2,3,4,5]), prompt: 'Select One', required: true %>
                     </div>
                 </div>
 

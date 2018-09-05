@@ -1,0 +1,21 @@
+broadcast: notificaitons_user_1
+
+broadcast: notificaitons_user_2
+
+broadcast: notificaitons_user_3
+
+broadcast: notificaitons_user_4
+
+
+
+User_1:
+	subscribe: notificaitons_user_1
+
+User_2:
+	subscribe: notificaitons_user_2
+
+User_3:
+	subscribe: notificaitons_user_3
+
+User_4:
+	subscribe: notificaitons_user_4

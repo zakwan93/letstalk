@@ -5,7 +5,7 @@
 	  <p class="mb-0">
 	  	<%= link_to "#{chat_room.title}", chat_room_path(chat_room), :class => 'navbar-link text-dark' %>
 	  	<span class = "float-right" style="font-size: 1rem;">
-			<%= link_to 'Delete', chat_room_path(@chat_rooms),:class => 'navbar-link text-danger', method: :delete, data: { confirm: "Are you sure?" }%>
+			<%= link_to 'Delete', chat_room_path(chat_room),:class => 'navbar-link text-danger', method: :delete, data: { confirm: "Are you sure?" }%>
 	  	</span>
 	  </p>
 

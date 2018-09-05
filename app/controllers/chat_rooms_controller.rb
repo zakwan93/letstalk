@@ -17,10 +17,31 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
+
     @user = current_user
     @profile = current_user.profile
   	@chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
-  	@message = Message.new
+    # if user owned_chatrooms then only he/she can check that chat room and write a message 
+
+
+    # chat_room
+    # id.     user_id
+    # 12       8
+
+
+    # user_chat_room
+    # chat_room_id      user_id
+    #   12                9
+    #.  12                27
+    #.  12                32
+
+
+    if @chat_room.owner.id == @user.id || @chat_room.user_chat_rooms.map(&:user_id).include?(@user.id)
+      #                                     # [9, 27, 32]
+  	  @message = Message.new
+    else
+      redirect_to chat_rooms_path
+    end
   end
 
   def new
