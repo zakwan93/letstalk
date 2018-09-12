@@ -28,10 +28,10 @@
 
                 <div class="form-group">
                     <label class = "col-sm-4 control-label">
-                        NYCDA Student? ( YES | NO ) <span class="text-danger"> * </span>
+                        NYCDA Student? <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control", required: true %>
+                        <%= f.select :nycdastudent, options_for_select(["YES","NO"]), prompt: 'Select One', required: true%>
                     </div>
                 </div>
                
@@ -41,7 +41,7 @@
                         Current City <span class="text-danger"> * </span>
                     </label>
                     <div class="col-sm-6">
-                        <%= f.text_field :location, autocomplete: "off", class: "form-control", required: true %>
+                        <%= f.text_field :location, autocomplete: "off", placeholder: "New York, NY", class: "form-control", required: true %>
                     </div>
                 </div>
 
