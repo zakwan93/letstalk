@@ -7,9 +7,7 @@ class SkillsController < ApplicationController
 		@skills = current_user.skills
 		if params[:language]
 		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
-		    @result_users = User.joins(:user_skills, :skills)
-		    				.where(user_skills: {skill_id:  @result_skills})
-		    				.order('skills.rating DESC').uniq
+		    @result_users = User.joins(:skills).where('lower(skills.language) LIKE ?', "%#{params[:language].downcase}%").order('skills.rating DESC').uniq
 		 else
 		    @skills = Skill.all
   		end
@@ -30,8 +28,13 @@ class SkillsController < ApplicationController
 	def create
 		# current_user.create_profile(profile_params)
 		# Profile.create(profile_params.merge(user_id: current_user.id))
-
-		current_user.skills << Skill.create(skills_params)
+		@skill = Skill.where('language = ?', params[:language]).first
+		if @skill.present?
+			current_user.skills << @skill
+		else
+			@user_skill = Skill.create(skills_params)
+			current_user.skills << @user_skill	
+		end
 		redirect_to profile_path
 	end
 

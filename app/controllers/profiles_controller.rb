@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 		@user = current_user
 		@profile = current_user.profile
 		@skills = current_user.skills
+		@new_skill = Skill.new
 	end
 
 	def new
