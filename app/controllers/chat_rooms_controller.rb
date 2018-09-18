@@ -35,7 +35,7 @@ class ChatRoomsController < ApplicationController
     #.  12                27
     #.  12                32
 
-
+                                          # @chat_room.users.map(&:id)
     if @chat_room.owner.id == @user.id || @chat_room.user_chat_rooms.map(&:user_id).include?(@user.id)
       #                                     # [9, 27, 32]
   	  @message = Message.new

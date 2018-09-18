@@ -21,9 +21,58 @@
   </tbody>
   <% end %>
 </table>
-
-<center>
-    <%= link_to 'ADD MORE SKILL', new_skill_path, :style=> 'color:black', :class => 'navbar-link' %>
-</center>
-
 </div>
+
+  <center>
+      <%= link_to "ADD MORE SKILL", "#my-modal", :class => "btn",:style=> 'color:black', "data-toggle" => "modal" %>
+  </center>
+
+
+        <div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" title="My modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #FFCB04;">
+              <!-- <h3 id="myModalLabel">Modal header</h3> -->
+              <h5 class="modal-title">ADD YOUR SKILL HERE</h5>
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+              </div>
+              <div class="modal-body bg-light">
+                <div class=" m-5 text-dark">
+                    <!-- <h2 class="ml-2">ADD YOUR SKILL HERE</h2><br> -->
+                      <%= form_for @new_skill do |f| %>
+                          <table class="table table-striped">
+                            <thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="col">LANGUAGE</th>
+                                  <td><%= f.text_field :language, autofocus: true, class: "form-control", required: true %> </td>
+                                </tr>
+                                <tr>
+                                  <th scope="col" class="d-none d-md-block">DESCRIPTION</th>
+                                  <td><%= f.text_area :disc, autocomplete: "off", class: "form-control", required: true %></td>
+                                </tr>
+                                <tr>
+                                  <th scope="col">RATING</th>
+                                  <td><%= f.select :rating, options_for_select([1,2,3,4,5]), prompt: 'Select One', required: true%></td>
+                                </tr>
+                              </tbody>
+                            </thead>
+                          </table>
+                          <center>
+                            <%= f.submit "ADD", class: "btn btn-primary" %></td>
+                          </center>
+                      <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </center>
+
+
+<!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script> -->

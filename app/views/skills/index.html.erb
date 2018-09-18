@@ -16,7 +16,7 @@
       <% @matching_results = skills_for_result(user.skills, @result_skills) %> 
        
       <tr>
-        <td> <%= user.profile.try(:fname) %> <%= user.profile.try(:lname) %></td>
+        <td> <%= user.profile.try(:fname) %> <%= user.profile.try(:lname) %> </td>
         <td> 
           <%= @matching_results.first && @matching_results.first.language %>
         </td>
