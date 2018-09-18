@@ -34,7 +34,25 @@
                         <%= f.select :nycdastudent, options_for_select(["YES","NO"]), prompt: 'Select One', required: true%>
                     </div>
                 </div>
-               
+                
+                <div class="form-group">
+                    <lable class = "col-sm-6 control-label" >
+                        Linkedin 
+                    </lable>
+                    <div class="col-sm-6">
+                        <%= f.text_field :linkdin, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <lable class = "col-sm-6 control-label" >
+                        Github 
+                    </lable>
+                    <div class="col-sm-6">
+                        <%= f.text_field :github, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <label class = "col-sm-4 control-label">

@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
 	def index
 		@user = current_user
 		@profile = current_user.profile
-		@skills = current_user.skills
+		@skills = current_user.skills.order('skills.rating DESC').uniq
 		if params[:language]
 		    @result_skills = Skill.where("lower(language) LIKE ?", "%#{params[:language].downcase}%") 
 		    @result_users = User.joins(:skills).where('lower(skills.language) LIKE ?', "%#{params[:language].downcase}%").order('skills.rating DESC').uniq
@@ -55,7 +55,7 @@ class SkillsController < ApplicationController
 		@user = current_user
 		@profile = current_user.profile
 		@skills = Skill.find(params[:id])
-		@skills.delete
+		@skills.destroy
 		redirect_to profile_path
 	end
 

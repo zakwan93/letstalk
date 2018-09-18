@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
 	def show
 		@user = current_user
 		@profile = current_user.profile
-		@skills = current_user.skills
+		@skills = current_user.skills.order('skills.rating DESC').distinct
 		@new_skill = Skill.new
 	end
 
@@ -60,6 +60,6 @@ class ProfilesController < ApplicationController
 
 	private
 		def profile_params
-			params.require(:profile).permit(:fname, :lname, :nycdastudent, :location, :image)
+			params.require(:profile).permit(:fname, :lname, :nycdastudent, :location, :image, :linkdin, :github)
 		end
 end
