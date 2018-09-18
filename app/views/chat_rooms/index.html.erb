@@ -1,16 +1,22 @@
 <div class="container mt-4">
-	<h1 class="ml-4">CHAT ROOMS</h1>
-<!-- 
-	<p class="lead" style="color: yellow;">< link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
- -->
+<!-- 	< if @chatrooms.legth == 0 %>
+		<h1 class="ml-4">CHAT ROOMS</h1>
+	<end %>
 
-	<ul>
-		<% @chat_rooms.each do |chat_room| %>
-			<%= render chat_room %>
-		<% end %>
+	<else %> -->
+		<h1 class="ml-4">CHAT ROOMS</h1>
+	<!-- 
+		<p class="lead" style="color: yellow;">< link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
+	 -->
 
-		  
-		  
-	</ul>
-	
+		<ul>
+			<% @chat_rooms.each do |chat_room| %>
+				<%= render chat_room %>
+			<% end %>
+
+			  
+			  
+		</ul>
+	<!-- < end %>  -->
+		
 </div>

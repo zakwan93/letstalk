@@ -91,6 +91,18 @@
                 <hr>
                 location: <strong> <%= @user.profile.location %> </strong>
                 <hr>
+                <center>
+                  <% unless @user.profile.linkdin.blank? %>
+                    <a href="<%= @user.profile.linkdin %>" target = "_blank"> 
+                        <%= image_tag "LinkedIn_logo_initials", :class => "style_image" %>  
+                    </a>
+                  <% end %>
+                  <% unless @user.profile.github.blank? %>
+                    <a href="<%= @user.profile.github %>" target = "_blank"> 
+                        <%= image_tag "github-logo-icon", :class => "style_image" %>
+                    </a>
+                    <% end %>
+                </center>
                 <!-- < link_to 'Edit', edit_profile_path, :style=> 'color:black', :class => 'navbar-link' %> -->
                 <% else %>
                 <% if user_signed_in? %>

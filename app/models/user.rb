@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :chat_rooms, :through => :user_chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :user_skills
-  has_many :skills, :through => :user_skills
+  has_many :skills, :through => :user_skills, dependent: :destroy
   has_one :profile
   
   def name
