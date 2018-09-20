@@ -1,22 +1,85 @@
 <div class="container mt-4">
-<!-- 	< if @chatrooms.legth == 0 %>
-		<h1 class="ml-4">CHAT ROOMS</h1>
-	<end %>
+	<% if @chat_rooms.length == 0 %>
+		<div class="container text-uppercase">
+			<h1 class="ml-4 text-dark"> OH NO, YOU DON'T HAVE ANY CHATROOM YET</h1>
+			<p class="ml-4 text-dark"> Don't worry I'll walk you through how it works. </p>
+			<div class=" ml-4 mt-3">
+				<p>Plese, follow this simple  
+					<strong class="text-warning ml-2 mr-2">steps</strong> 
+					 to create chat room 
+				</p>
+				<div class="row mt-3">
+					<div class="col-12">
+						<div class="card bg-light border-0">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 1</h5>
+						    <p class="card-text"> Please select 
+						    	<strong class="text-warning ml-2 mr-2">search</strong>
+								 bar in nav
+						    </p>
+						    <%= image_tag "search-bar", :style=> 'height: 100%; width: 40%;', :alt=> "Card image cap"%> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="card bg-light border-0 float-right">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 2</h5>
+						    <p class="card-text "> Now, when you are here please search the   
+						    	<strong class="text-warning ml-2 mr-2">language</strong>
+								 you want to learn by the name (one at a time)
+						    </p>
+						    <%= image_tag "search-bar-lang", :style=> 'height: 100%; width: 40%;', :alt=> "Card image cap", :class=> "float-right" %> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="card bg-light border-0">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 3</h5>
+						    <p class="card-text"> It will give you the list of 
+						    	<strong class="text-warning ml-2 mr-2">user</strong>
+						    	who added your search language
+						    	<strong class="text-warning ml-2 mr-2">HTML</strong>
+								 as their skill with ratig and little description, which means you will get idea how comfortable they are with
+								 <strong class="text-warning ml-2 mr-2">HTML</strong>. 
+						    </p>
+						    <%= image_tag "search-user", :style=> 'height: 100%; width: 60%;', :alt=> "Card image cap"%> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="card bg-light border-0 float-right">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 4</h5>
+						    <p class="card-text "> Now, when you are here please search the   
+						    	<strong class="text-warning ml-2 mr-2">language</strong>
+								 you want to learn by the name (one at a time)
+						    </p>
+						    <%= image_tag "letstalkbtn", :style=> 'height: 100%; width: 40%;', :alt=> "Card image cap", :class=> "float-right" %> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
 
-	<else %> -->
+
+				</div>
+			</div>
+		</div>
+
+	<% else %>
 		<h1 class="ml-4">CHAT ROOMS</h1>
 	<!-- 
 		<p class="lead" style="color: yellow;">< link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
 	 -->
-
 		<ul>
 			<% @chat_rooms.each do |chat_room| %>
 				<%= render chat_room %>
-			<% end %>
-
-			  
-			  
+			<% end %> 
 		</ul>
-	<!-- < end %>  -->
+	<% end %> 
 		
 </div>
