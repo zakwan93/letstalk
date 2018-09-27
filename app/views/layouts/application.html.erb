@@ -74,7 +74,7 @@
     <% end %>
 
     <div class="row">
-      <div class="col-md-5 col-lg-3 d-none d-md-block" style="background-color: #FFCB04; min-height: 90vh;">
+      <div class="col-md-5 col-lg-3 d-none d-md-block" style="background-color: #FFCB04; min-height: 90vh; ">
         <h2 style="padding: 50px 0px 0px 50px;"> LET'S CODE(< >) </h2>
           <% unless @user.profile == nil %>
               <p class="mt-2 ml-5">
@@ -112,7 +112,8 @@
               </h5>
           <% end %>
       </div>
-      <div class="col-sm-12 col-md-7 col-lg-9 bg-light ">
+      <div class="col-sm-12 col-md-7 col-lg-9 bg-light " style="float: left;
+        width: 71%">
           <!-- <div class="container"> -->
         <%= yield %>
           <!-- </div> -->
