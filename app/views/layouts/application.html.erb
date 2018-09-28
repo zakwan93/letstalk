@@ -32,19 +32,28 @@
               <li class="nav-item m-2">
                 <%= link_to 'CHAT-ROOMS', chat_rooms_path, :style=> 'color:#FFCB04', :class => 'navbar-link' %>
               </li>
+
+               <li class="nav-item m-2">
+                 <%= link_to 'EDIT PROFILE', edit_profile_path, :class => 'navbar-link', :style=> 'color:#FFCB04' %>
+              </li>
+
+
+               <li class="nav-item m-2">
+               <%= link_to "LOGOUT", destroy_user_session_path,method: :delete, :class => 'navbar-link', :style=> 'color:#FFCB04'  %>
+              </li>
              <!--  <li class="nav-item m-2">
                 < link_to "LOGOUT", destroy_user_session_path,  :style=> 'color:yellow',method: :delete, :class => 'navbar-link'  %>
         
               </li> -->
               <li class="nav-item dropdown ml-2 ">
                   <!-- <link_to 'PROFILE', profile_path, :style=> 'color:yellow', :class => 'navbar-link dropdown-toggle active' :id => 'navbarDropdown', role: => "button" %> -->
-                  <a href="<%= profile_path%>" class="nav-link dropdown-toggle active  " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ='color:#FFCB04'>MORE-OPTIONS</a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                    <%= link_to 'EDIT PROFILE', edit_profile_path, :class => 'dropdown-item', :style=> 'color:#FFCB04' %>
-                    <%= link_to "LOGOUT", destroy_user_session_path,method: :delete, :class => 'dropdown-item', :style=> 'color:#FFCB04'  %>
+                  <!-- <a href="<%= profile_path%>" class="nav-link dropdown-toggle active  " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ='color:#FFCB04'>MORE-OPTIONS</a> -->
+                  <!-- <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown"> -->
+                    <!-- < link_to 'EDIT PROFILE', edit_profile_path, :class => 'dropdown-item', :style=> 'color:#FFCB04' %> -->
+                    <!-- < link_to "LOGOUT", destroy_user_session_path,method: :delete, :class => 'dropdown-item', :style=> 'color:#FFCB04'  %> -->
                     <!-- <a href="#" class="dropdown-item">Aplicações para a área de saúde</a> -->
-                  </div>
-               </li>
+                 <!--  </div>
+               </li> -->
             </ul>
 
             <span class="navbar-text">
