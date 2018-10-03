@@ -30,8 +30,8 @@
                     <label class = "col-sm-4 control-label">
                         NYCDA Student? ( YES | NO ) <span class="text-danger"> * </span>
                     </label>
-                    <div class="col-sm-6">
-                        <%= f.text_field :nycdastudent, autocomplete: "off", class: "form-control", required: true%>
+                     <div class="col-sm-6">
+                        <%= f.select :nycdastudent, options_for_select(["YES","NO"]), prompt: 'Select One', required: true%>
                     </div>
                 </div>
                
