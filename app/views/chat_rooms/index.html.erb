@@ -1,15 +1,51 @@
 <div class="container mt-4">
 	<% if @chat_rooms.length == 0 %>
-		<div class="container text-uppercase">
-			<h1 class="ml-4 text-dark"> OH NO, YOU DON'T HAVE ANY CHATROOM YET</h1>
+	<center>
+	<div class="container text-uppercase justify-content-center">
+		<div class="jumbotron my-auto">
+			<h1 class="ml-4 text-dark "> OH SNAP, YOU DON'T HAVE ANY CHATROOM YET
+				
+			</h1>
 			<p class="ml-4 text-dark"> Don't worry I'll walk you through how it works. </p>
-			<div class=" ml-4 mt-3">
-				<p>Plese, follow this simple  
-					<strong class="text-warning ml-2 mr-2">steps</strong> 
-					 to create chat room 
-				</p>
-				<div class="row mt-3">
-					<div class="col-6">
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalLong">
+  				CLICK ME!
+			</button>
+	</center>
+	<% else %>
+		<h1 class="ml-4">CHAT ROOMS</h1>
+	<!-- 
+		<p class="lead" style="color: yellow;">< link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
+	 -->
+		<ul>
+			<% @chat_rooms.each do |chat_room| %>
+				<%= render chat_room %>
+			<% end %> 
+		</ul>
+	<% end %> 
+</div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Step to create a Chatroom</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+      	<div class="row mt-3">
+					<div class="col-9">
 						<div class="card bg-light border-0">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 1</h5>
@@ -17,20 +53,20 @@
 						    	<strong class="text-warning ml-2 mr-2">search</strong>
 								 bar in nav
 						    </p>
-						    <%= image_tag "search-bar", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap"%> 
+						    <%= image_tag "search-bar", :style=> 'height: 100%; width: 100%;', :class => 'border border-secondary',:alt=> "Card image cap"%> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
 				</div>
 				<div class="row mt-3">
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
-					<div class="col-6">
+					<div class="col-9">
 						<div class="card bg-light border-0 float-right">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 2</h5>
@@ -38,14 +74,14 @@
 						    	<strong class="text-warning ml-2 mr-2">language</strong>
 								 you want to learn by the name (one at a time)
 						    </p>
-						    <%= image_tag "search-bar-lang", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap", :class=> "float-right" %> 
+						    <%= image_tag "search-bar-lang", :style=> 'height: 100%; width: 100%;',:class => 'border border-secondary', :alt=> "Card image cap", :class=> "float-right" %> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
 				</div>
 				<div class="row mt-3">
-					<div class="col-6">
+					<div class="col-9">
 						<div class="card bg-light border-0">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 3</h5>
@@ -56,20 +92,20 @@
 								 as their skill with rating and little description, which means you will get idea how comfortable they are with
 								 <strong class="text-warning ml-2 mr-2">HTML</strong>. 
 						    </p>
-						    <%= image_tag "search-user", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap"%> 
+						    <%= image_tag "search-user", :style=> 'height: 100%; width: 100%;',:class => 'border border-secondary', :alt=> "Card image cap"%> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
 				</div>
 				<div class="row mt-3">
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
-					<div class="col-6">
+					<div class="col-9">
 						<div class="card bg-light border-0 float-right">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 4</h5>
@@ -77,14 +113,14 @@
 						    	<strong class="text-warning ml-2 mr-2">Let's Talk</strong>.
 								 Please click on that button.
 						    </p>
-						    <%= image_tag "letstalkbtn", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap", :class=> "float-right" %> 
+						    <%= image_tag "letstalkbtn", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap", :class=> "float-right border border-secondary" %> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
 				</div>
 				<div class="row mt-3">
-					<div class="col-6">
+					<div class="col-9">
 						<div class="card bg-light border-0">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 5</h5>
@@ -97,51 +133,86 @@
 						    	<strong class="text-warning ml-2 mr-2">Chatroom</strong>
 								between you and selected user.
 						    </p>
-						    <%= image_tag "userprofile1", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap"%> 
+						    <%= image_tag "userprofile1", :style=> 'height: 100%; width: 100%;', :class => 'border border-secondary',:alt=> "Card image cap"%> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
 				</div>
 				<div class="row mt-3">
-					<div class="col-6">
+					<div class="col-3">
 
 					</div>
-					<div class="col-6">
+					<div class="col-9">
 						<div class="card bg-light border-0">
 						  <div class="card-body">
 						    <h5 class="card-title">STEP 6</h5>
-						    <p class="card-text"> When you click on 
-						    	<strong class="text-warning ml-2 mr-2">Let's Talk</strong>
-						    	button you will see selected user profile with
-						    	<strong class="text-warning ml-2 mr-2">Linkedin</strong> and
-						    	<strong class="text-warning ml-2 mr-2">Github</strong>
-						    	accounnt link on left and on right it will ask you to create
-						    	<strong class="text-warning ml-2 mr-2">Chatroom</strong>
-								between you and selected user.
+						    <p class="card-text"> In title you can type a  
+						    	<strong class="text-warning ml-2 mr-2">Chatroom Name. </strong>
+						    	Just make it relevent to the
+						    	<strong class="text-warning ml-2 mr-2">Lannguage</strong> you gonna talk about.
+						    	
 						    </p>
-						    <%= image_tag "userprofile1", :style=> 'height: 100%; width: 100%;', :alt=> "Card image cap"%> 
+						    <%= image_tag "chatroomname1", :style=> 'height: 100%; width: 100%;', :class => 'border border-secondary', :alt=> "Card image cap"%> 
 						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 						  </div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
 
-	<% else %>
-		<h1 class="ml-4">CHAT ROOMS</h1>
-	<!-- 
-		<p class="lead" style="color: yellow;">< link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
-	 -->
-		<ul>
-			<% @chat_rooms.each do |chat_room| %>
-				<%= render chat_room %>
-			<% end %> 
-		</ul>
-	<% end %> 
-		
+				<div class="row mt-3">
+					<div class="col-9">
+						<div class="card bg-light border-0">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 7</h5>
+						    <p class="card-text"> It will create a  
+						    	<strong class="text-warning ml-2 mr-2">Chatroom</strong>
+						   		as you can see in a picture.
+						    	Now, click on that chatroom and strat chatting about your problem.
+						    </p>
+						    <%= image_tag "chatroomslist", :style=> 'height: 100%; width: 100%;', :class => 'border border-secondary',:alt=> "Card image cap"%> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
+					<div class="col-3">
+
+					</div>
+				</div>
+
+				<div class="row mt-3">
+					<div class="col-3">
+
+					</div>
+					<div class="col-9">
+						<div class="card bg-light border-0">
+						  <div class="card-body">
+						    <h5 class="card-title">STEP 8</h5>
+						     
+						    	<strong class="text-warning ml-2 mr-2">HAPPY CODING! </strong>
+						    	
+						    	
+						    </p>
+						    <%= image_tag "chat", :style=> 'height: 100%; width: 100%;', :class => 'border border-secondary', :alt=> "Card image cap"%> 
+						    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+						  </div>
+						</div>
+					</div>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+	

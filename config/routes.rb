@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 	end
 	resources :skills
 
+	resources :home, only: [:index]
+
 end
