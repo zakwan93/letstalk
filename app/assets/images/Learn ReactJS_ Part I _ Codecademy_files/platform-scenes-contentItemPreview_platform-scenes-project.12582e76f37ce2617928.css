@@ -1,0 +1,72 @@
+.position__1lzCOFXPgJEtZu1sbxdG0 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  top: -8px;
+  z-index: 10; }
+
+.position-center__FVGV2tQU1L-P6Z9TMIcJD {
+  left: 50%;
+  -webkit-transform: translateY(-100%) translateX(-50%);
+          transform: translateY(-100%) translateX(-50%); }
+
+.position-left__4pAxj3TPKbWFQ3yuD0MYh {
+  left: 10px; }
+
+.position-right__2xWVjf5FN0FbSicAaIGJ5G {
+  right: 10px; }
+
+.tooltip__2wmDW8keVtpofNhsSnSMBW {
+  padding: 10px;
+  z-index: 98;
+  max-width: 450px;
+  white-space: normal;
+  font-size: 14px; }
+
+.content__GGE5Cg7MHOhx3YOmNO9g0 {
+  position: relative; }
+
+.arrow__4b5MGFSdTHa_M1-YB0Bow {
+  overflow: visible;
+  border: solid;
+  border-color: transparent;
+  border-width: 6px 6px 0;
+  bottom: -6px;
+  left: 25px;
+  position: absolute;
+  z-index: 99; }
+
+.arrow-left__1bOtB5i0TTWaM-dlQQeHHK {
+  left: 25px; }
+
+.arrow-center__5qBNV6NJVpr7TDT9Y9dVp {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
+
+.arrow-right__24D7u7Mxhf4_Men-RibzaV {
+  right: 25px; }
+
+.tooltip__rGYENLyKnXw3dFJrHxapF {
+  background-color: #15141f;
+  color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Monaco, Menlo, "Ubuntu Mono", "Droid Sans Mono", Consolas, monospace; }
+
+.arrow__368SD__jdXY56QCbwOKxe2 {
+  border-top-color: #15141f; }
+
+.tooltip__1Ul4m7Og0s3x0PP87SF-nb {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.arrow__3vsr7y3va_loEvCy-B0bgp {
+  border-top-color: #ffffff; }
+
+
+/*# sourceMappingURL=platform-scenes-contentItemPreview~platform-scenes-project.12582e76f37ce2617928.css.map*/

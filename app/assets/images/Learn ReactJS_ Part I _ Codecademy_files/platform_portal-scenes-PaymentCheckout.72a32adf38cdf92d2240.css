@@ -1,0 +1,144 @@
+.captcha__26156DPbSITpqYuXJA9H76 .grecaptcha-badge {
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1; }
+
+.socialAuthContainer__3Z8JGrjINVY9W7QUaups9w {
+  padding-bottom: 0; }
+
+.socialAuthButton__37xPl0ozPFfWqDPqxOZliK {
+  transition: box-shadow 0.3s;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+  color: #5a5b5e;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  border: 2px solid #e9eaea;
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .socialAuthButton__37xPl0ozPFfWqDPqxOZliK:hover, .socialAuthButton__37xPl0ozPFfWqDPqxOZliK:focus, .socialAuthButton__37xPl0ozPFfWqDPqxOZliK:active {
+    border: 2px solid #e9eaea;
+    color: #5a5b5e;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(212, 213, 214, 0.6); }
+
+.btnContainer__3Ldc1PXDuChiV56wYQugYC {
+  padding: 0;
+  display: flex;
+  justify-content: space-between; }
+
+.btnContainerListItem__10yHp3iXp82dNRPsTGDPpr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto; }
+
+.btnContainerListItem__10yHp3iXp82dNRPsTGDPpr + .btnContainerListItem__10yHp3iXp82dNRPsTGDPpr {
+  margin-left: 0.5rem; }
+
+.icon__2vDktWxPDSLCOvKmj71yjI {
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  width: 1.5rem; }
+
+.header__C9eDi15RTpeygpoXEp9r {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem; }
+
+.registrationContainer__2QEroVip0rj6VbrALiBz8V {
+  max-width: 22rem; }
+
+.screenReaderOnly__1DEYZ8Nk3P95bk8hyfMxBS {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0; }
+
+.submitButton__34k4InI5TII_ayjcKIwCLO {
+  width: 100%;
+  margin-bottom: 1rem; }
+
+.tos__2irFvmVYzLt-zbObC3_2D8 {
+  font-size: 0.88rem; }
+  .tos__2irFvmVYzLt-zbObC3_2D8 a {
+    color: #3d65c2 !important;
+    font-weight: bold;
+    text-decoration: underline; }
+
+.recaptchaError__1Bv_glx_hCOObzHUb3cF9b {
+  color: #fa4359;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.5rem; }
+
+.formGroup__2f7GlHvZXKIMvaIzaJuPIp {
+  margin-bottom: 1rem;
+  position: relative; }
+  .formGroup__2f7GlHvZXKIMvaIzaJuPIp label {
+    font-size: 0.9rem !important;
+    display: inline-block;
+    margin-right: 0.4rem;
+    margin-bottom: 0; }
+  .formGroup__2f7GlHvZXKIMvaIzaJuPIp label + div {
+    color: #fa4359;
+    font-size: 0.9rem !important;
+    display: inline; }
+  .formGroup__2f7GlHvZXKIMvaIzaJuPIp input {
+    margin-top: 0.5rem; }
+
+.padBottomIfNotEmpty__1nV3QG5IEzhRlwpmTjvFiE:not(:empty) {
+  margin-bottom: 1rem; }
+
+.container__2iP6G47sEc0hAqBE6gd-rL {
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem; }
+
+.screenReaderOnly__3RG-yj8QUaqEGxoq60clEz {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0; }
+
+.loginForm__2b3QhfEl2q0x-jGDvaL1hW {
+  text-align: left;
+  padding-bottom: 1rem; }
+  .loginForm__2b3QhfEl2q0x-jGDvaL1hW label {
+    font-size: 0.9rem !important; }
+
+.formGroup__DxbdSf7u2URNR1UigkrrR {
+  margin-bottom: 1rem; }
+
+.forgotPassword__3CETpPRhWY6VqWde7qEZ0J {
+  font-size: 0.9rem;
+  color: #3d65c2 !important;
+  margin-bottom: 1rem;
+  font-weight: bold; }
+  .forgotPassword__3CETpPRhWY6VqWde7qEZ0J:focus {
+    text-decoration: underline; }
+
+.fullWidth__2aGNuAM7l4e7l8N_Vc254T {
+  width: 100%; }
+
+.padBottomIfNotEmpty___qfVeDxS0ffuHMXuMwhV6:not(:empty) {
+  margin-bottom: 1rem; }
+
+
+/*# sourceMappingURL=platform~portal-scenes-PaymentCheckout.72a32adf38cdf92d2240.css.map*/
