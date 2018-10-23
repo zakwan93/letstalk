@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2018_09_18_194445) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "title"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id"
-    t.integer "chat_room_id"
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
     t.string "lname"
     t.string "nycdastudent"
     t.string "location"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "linkdin"
@@ -78,8 +81,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
   end
 
   create_table "user_chat_rooms", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "chat_room_id"
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_user_chat_rooms_on_chat_room_id"
@@ -87,8 +90,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
   end
 
   create_table "user_skills", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "skill_id"
+    t.bigint "user_id"
+    t.bigint "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_user_skills_on_skill_id"
@@ -112,4 +115,12 @@ ActiveRecord::Schema.define(version: 2018_09_18_194445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chat_rooms", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "user_chat_rooms", "chat_rooms"
+  add_foreign_key "user_chat_rooms", "users"
+  add_foreign_key "user_skills", "skills"
+  add_foreign_key "user_skills", "users"
 end
