@@ -26,6 +26,12 @@
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Your Email", class: "form-control border border-dark", style: "border-radius: 0;" %>
             </div>
             </center>
+            <div class="row">
+              <div class="col-sm-2 ml-3"></div>
+              <div class="col-sm-6 mt-1">
+                <em class="text-left text-dark">Test User - test@test.com</em>
+              </div>
+            </div>
           </div>
 
           <div class="form-group">
@@ -34,6 +40,12 @@
                 <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "Your Password", class: "form-control border border-dark", style: "border-radius: 0;" %>
             </div>
             </center>
+            <div class="row">
+              <div class="col-sm-2 ml-3"></div>
+              <div class="col-sm-6 mt-1">
+                <em class="text-left text-dark">Password - 123123</em>
+              </div>
+            </div>
           </div>
           
           <% if devise_mapping.rememberable? -%>
@@ -61,7 +73,7 @@
       </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-3">
       <div class="col-12 mt-5">
         <h1 class="mb-2 mt-5 text-center">NOT A PART OF CODIG FAMILY YET</h1>
         <br>
