@@ -112,7 +112,9 @@
                   <% end %>
                   <% unless @user.profile.github.blank? %>
                     <a href="<%= @user.profile.github %>" target = "_blank"> 
-                        <%= image_tag "github-logo-icon", :class => "style_image" %>
+                        <!-- < image_tag "github-logo-icon", :class => "style_image" > -->
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" class="style_image">
+                        
                     </a>
                     <% end %>
                 </center>
