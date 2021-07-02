@@ -1,0 +1,15 @@
+current directory: /Users/zakwan/Desktop/Code/letstalk/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/zakwan/.rvm/rubies/ruby-2.5.1/bin/ruby -I /Users/zakwan/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20210701-2264-1f650ug.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zakwan/Desktop/Code/letstalk/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/zakwan/Desktop/Code/letstalk/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/zakwan/Desktop/Code/letstalk/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20210701-2264-1ylhlyz
